@@ -63,5 +63,15 @@
             <artifactId>jsp-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!--上传组件-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <!-- 时间操作组件 -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -21,7 +21,9 @@ public class ItemCatController {
     @GetMapping()
     public ResponseEntity<List<ItemCat>> queryItemListByParentId(@RequestParam(value = "id", defaultValue = "0") Long parentId) {
         try {
-            List<ItemCat> list = itenCatService.queryItemListByParentId(parentId);
+            ItemCat itemCat = new ItemCat();
+            itemCat.setParentId(parentId);
+            List<ItemCat> list = itenCatService.queryListByWhere(itemCat);
             if (null == list) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             } else {

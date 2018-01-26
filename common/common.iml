@@ -22,10 +22,5 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: portlet-api:portlet-api:1.0" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:jstl:1.0.2" level="project" />
-    <orderEntry type="library" name="Maven: taglibs:standard:1.0.4" level="project" />
-    <orderEntry type="library" name="Maven: xalan:xalan:2.6.0" level="project" />
-    <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
   </component>
 </module>
