@@ -43,7 +43,8 @@ public class PicUploadController {
     @PostMapping(value = "/upload", produces = MediaType.TEXT_PLAIN_VALUE)
     @ResponseBody
     public String upload(@RequestParam("uploadFile") MultipartFile uploadFile, HttpServletResponse response) throws Exception {
-
+        System.out.println(propertieService.IMAGE_BASE_URL+"yyyyyyyyyyyyyyyy");
+        System.out.println(propertieService.REPORSITORY_PATH+"xxxxxxxxxxxxxx");
         // 校验图片格式
         boolean isLegal = false;
         for (String type : IMAGE_TYPE) {

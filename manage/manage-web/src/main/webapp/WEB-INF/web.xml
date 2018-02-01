@@ -38,14 +38,14 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <!--<filter>
+    <filter>
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <servlet-name>springMvc</servlet-name>
-    </filter-mapping>-->
+    </filter-mapping>
     <filter>
         <filter-name>HttpMethodFilter</filter-name>
         <filter-class>org.springframework.web.filter.HttpPutFormContentFilter</filter-class>
@@ -60,6 +60,6 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>./views/index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
