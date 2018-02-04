@@ -1,6 +1,7 @@
 package cn.xawl.manage.service;
 
 import cn.xawl.common.EasyUIResult;
+import cn.xawl.common.service.ApiService;
 import cn.xawl.manage.dao.ItemMapper;
 import cn.xawl.manage.pojo.Item;
 import cn.xawl.manage.pojo.ItemDesc;
@@ -9,6 +10,7 @@ import com.github.abel533.entity.Example;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +25,12 @@ public class ItemService extends BaseService<Item> {
 
     @Autowired
     private ItemMapper itemMapper;
+
+    @Autowired
+    private ApiService apiService;
+
+    @Value( "${SHOP_WEB_URL}" )
+    private String SHOP_WEB_URL;
 
     public Boolean saveItem(Item item, String desc, String itemParams) {
         item.setStatus(1);
@@ -65,6 +73,11 @@ public class ItemService extends BaseService<Item> {
         example.createCriteria().andEqualTo("itemId", item.getId());
 
         Integer itemParamItemInt = itemParamItemService.updateParamItem(item.getId(), itemParams);
+        try {
+            String url = SHOP_WEB_URL + "/item/cache/" + item.getId();
+            apiService.doPost(url);
+        } catch ( Exception e ) {
+        }
 
         return itemInt == 1 && itemDescInt == 1 && itemParamItemInt == 1 ? true : false;
     }

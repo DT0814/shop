@@ -1,6 +1,5 @@
-package cn.xawl.manage.service;
+package cn.xawl.common.service;
 
-import cn.xawl.manage.service.utils.Function;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.ShardedJedis;
@@ -9,7 +8,7 @@ import redis.clients.jedis.ShardedJedisPool;
 @Service
 public class RedisService {
 
-    @Autowired
+    @Autowired( required = false )
     private ShardedJedisPool shardedJedisPool;
 
     private <T> T execute(Function<T, ShardedJedis> fun) {

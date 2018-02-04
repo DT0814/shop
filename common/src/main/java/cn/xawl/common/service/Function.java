@@ -1,4 +1,4 @@
-package cn.xawl.manage.service.utils;
+package cn.xawl.common.service;
 
 
 public interface Function<T, E> {

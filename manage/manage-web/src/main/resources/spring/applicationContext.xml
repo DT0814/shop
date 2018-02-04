@@ -18,13 +18,13 @@
                 <value>classpath:jdbc.properties</value>
                 <value>classpath:env.properties</value>
                 <value>classpath:redis.properties</value>
+                <value>classpath:httpclient.properties</value>
             </list>
         </property>
     </bean>
 
     <!-- 扫描包 -->
-    <context:component-scan base-package="cn.xawl.manage.*"/>
-
+    <context:component-scan base-package="cn.xawl.manage.*,cn.xawl.common.*"/>
     <!-- 定义数据源 -->
     <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
           destroy-method="close">
