@@ -1,4 +1,4 @@
-package cn.xawl.web.httpclient;
+package cn.xawl.common.httpclient;
 
 
 public class HttpResult {

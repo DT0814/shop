@@ -1,6 +1,6 @@
-package cn.xawl.web.service;
+package cn.xawl.common.service;
 
-import cn.xawl.web.httpclient.HttpResult;
+import cn.xawl.common.httpclient.HttpResult;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
@@ -29,7 +29,7 @@ import java.util.Map;
 @Service
 public class ApiService implements BeanFactoryAware {
 
-    @Autowired
+    @Autowired( required = false )
     private RequestConfig requestConfig;
 
     private BeanFactory beanFactory;
