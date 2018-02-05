@@ -1,19 +1,18 @@
 var TT = TAOTAO = {
 	checkLogin : function(){
-		var _ticket = $.cookie("TT_TICKET");
-		if(!_ticket){
+		var _token = $.cookie("LOGIN_COOKIE");
+		alert(_token)
+		if(!_token){
 			return ;
 		}
 		$.ajax({
-			url : "http://sso.taotao.com/user/query/" + _ticket,
+
+			url : "http://sso.goshoping.com/service/user/" + _token,
 			dataType : "jsonp",
 			type : "GET",
 			success : function(data){
-				if(data.status == 200){
-					var _data = JSON.parse(data.data);
 					var html =_data.username+"，欢迎来到淘淘！<a href=\"http://www.taotao.com/user/logout.html\" class=\"link-logout\">[退出]</a>";
 					$("#loginbar").html(html);
-				}
 			}
 		});
 	}

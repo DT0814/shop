@@ -24,7 +24,7 @@
     </bean>
 
     <!-- 扫描包 -->
-    <context:component-scan base-package="cn.xawl.manage.*,cn.xawl.common.*"/>
+    <context:component-scan base-package="cn.xawl.sso.*,cn.xawl.common.*"/>
     <!-- 定义数据源 -->
     <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
           destroy-method="close">
